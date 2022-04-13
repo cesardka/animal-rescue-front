@@ -5,7 +5,7 @@ import {
   AppLogo,
   AppTitle,
   AppSubtitle,
-  LoginForm,
+  LoginWrapper,
 } from "./styles";
 
 export const Login = () => (
@@ -15,9 +15,9 @@ export const Login = () => (
       <AppTitle>Animal Rescue</AppTitle>
       <AppSubtitle>Aqui o amor é verdadeiro</AppSubtitle>
     </AppHeader>
-    <LoginForm>
+    <LoginWrapper>
       <PrimaryButton>Login</PrimaryButton>
       <SecondaryButton>Cadastro</SecondaryButton>
-    </LoginForm>
+    </LoginWrapper>
   </AppWrapper>
 );

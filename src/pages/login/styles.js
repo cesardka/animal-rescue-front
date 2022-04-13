@@ -30,6 +30,7 @@ export const AppTitle = styled.p`
   font-size: 36px;
   font-weight: 800;
   line-height: 44px;
+  padding: 2rem 0 0.4rem 0;
 `;
 
 export const AppSubtitle = styled.span`
@@ -40,7 +41,7 @@ export const AppSubtitle = styled.span`
   color: var(--tertiaryFontColor);
 `;
 
-export const LoginForm = styled.form`
+export const LoginWrapper = styled.div`
   display: flex;
   height: 300px;
   flex-direction: column;

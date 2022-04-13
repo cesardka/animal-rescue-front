@@ -1,13 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,100&family=Open+Sans:wght@300;500;600;800&display=swap");
 
 :root {
-  --primaryBackgroundColor: #e5e5e5;
-  --secondaryBackgroundColor: #ffbe0b;
+  --defaultBackgroundColor: #ffffff;
+  --primaryBackgroundColor: #ffbe0b;
+  --secondaryBackgroundColor: #ede6e6;
 
-  --primaryFontColor: #ffbe0b;
-  --secondaryFontColor: #ffffff;
+  --primaryFontColor: #ffffff;
+  --secondaryFontColor: #ffbe0b;
   --tertiaryFontColor: #fb5607;
   --labelColor: #219ebc;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root,
+html,
+body {
+  height: 100%;
 }
 
 body {
@@ -19,11 +37,34 @@ body {
   letter-spacing: 0em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--primaryBackgroundColor);
+  background-color: var(--defaultBackgroundColor);
   color: var(--primaryFontColor);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
 }

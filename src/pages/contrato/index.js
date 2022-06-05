@@ -3,6 +3,10 @@ import jsPDF from "jspdf";
 import { useState } from "react";
 import "./style.css";
 
+import ReactToPdf from "react-to-pdf";
+
+const ref = React.createRef();
+
 export function Contrato() {
   const [name, setName] = useState("");
   const [streetName, setStreetName] = useState("");
@@ -51,15 +55,11 @@ export function Contrato() {
     };
 
     console.log(data);
-
-    var doc = new jsPDF();
-    doc.text("Hello world!", 10, 10);
-    doc.save("a4.pdf");
   };
 
   return (
     <div className='form'>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} ref={ref}>
         <div className='form-questoes'>
           <div className='form-adotante'>
             <label>
@@ -257,9 +257,24 @@ export function Contrato() {
           maltratar animais é crime. Pena: 3 meses a 1 ano de detenção e multa
           (Lei Federal 9605/98)
         </span>
-        <button type='submit' name='form-botao' value='foo'>
-          Gerar contrato
-        </button>
+        <div>
+          <ReactToPdf
+            targetRef={ref}
+            filename='contrato.pdf'
+            x={0.5}
+            y={0.5}
+            scale={0.8}>
+            {({ toPdf }) => (
+              <button
+                type='submit'
+                name='form-botao'
+                value='foo'
+                onClick={toPdf}>
+                Baixar contrato
+              </button>
+            )}
+          </ReactToPdf>
+        </div>
       </form>
     </div>
   );

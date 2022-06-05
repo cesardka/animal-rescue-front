@@ -1,5 +1,5 @@
 import React from "react";
-import jsPDF from "jspdf";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./style.css";
 
@@ -29,6 +29,8 @@ export function Contrato() {
   const [size, setSize] = useState("");
   const [chip, setChip] = useState("");
 
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = {
@@ -55,6 +57,7 @@ export function Contrato() {
     };
 
     console.log(data);
+    navigate("/home");
   };
 
   return (

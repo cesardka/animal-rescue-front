@@ -1,7 +1,7 @@
 .form {
     background-color: #EDE6E6;
-    width: 100%;
-    height: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
     color: black;
     display: flex;
     justify-content: space-around;
@@ -23,6 +23,8 @@ label {
     display: flex;
     flex-direction: column;
     padding: 5px;
+    color: #219EBC;
+    font-weight: 600;
 }
 
 .form-questoes {
@@ -41,8 +43,12 @@ label {
 }
 
 input {
-    background-color: azure;
+    background-color: #f7fcfc;
     border-radius: 5px;
+    padding: 4px;
+    font-weight: 500;
+    margin-top: 5px;
+    color: #FFBE0B;
 }
 
 span {
@@ -56,4 +62,17 @@ button {
     padding: 5px;
     border-radius: 10px;
     color: white;
+}
+
+button:hover {
+    background-color: #156f85;
+}
+
+select {
+    background-color: #f7fcfc;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-top: 5px;
+    padding: 4px;
+    color: #FFBE0B;
 }

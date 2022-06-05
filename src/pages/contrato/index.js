@@ -191,19 +191,28 @@ export function Contrato() {
             </label>
             <label>
               Especie
-              <input
-                type='text'
+              <select
                 value={specie}
-                onChange={(e) => setSpecie(e.target.value)}
-              />
+                onChange={(e) => setSpecie(e.target.value)}>
+                <option value='cachorro'>Cachorro</option>
+                <option value='gato'>Gato</option>
+                <option defaultValue value='outro'>
+                  Outro
+                </option>
+              </select>
             </label>
             <label>
               Sexo
-              <input
-                type='text'
+              <select
                 value={gender}
-                onChange={(e) => setGender(e.target.value)}
-              />
+                onChange={(e) => setGender(e.target.value)}>
+                <option value='femino'>Femino</option>
+                <option value='masculino'>Masculino</option>
+                <option defaultValue value='nao-binario'>
+                  Não-binário
+                </option>
+                <option value='outro'>Outro</option>
+              </select>
             </label>
             <label>
               Vacinado

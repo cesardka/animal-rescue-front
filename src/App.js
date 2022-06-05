@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { Login } from "./pages/login";
 import { Contrato } from "./pages/contrato";
+import { MeusAnimais } from "./pages/meus-animais";
 export default function App() {
   return (
     <Router>
@@ -91,7 +92,7 @@ export default function App() {
           <Route path='/sobre' element={<About />} />
           <Route path='/contrato' element={<Contrato />} />
           <Route path='/perfil' element={<About />} />
-          <Route path='/meus-animais' element={<About />} />
+          <Route path='/meus-animais' element={<MeusAnimais />} />
           <Route path='/doar' element={<About />} />
           <Route path='/adotar' element={<About />} />
           <Route path='/login' element={<Login />} />

@@ -8,6 +8,8 @@ import {
 import { Login } from "./pages/login";
 import { Contrato } from "./pages/contrato";
 import { MeusAnimais } from "./pages/meus-animais";
+import { Perfil } from "./pages/perfil";
+
 export default function App() {
   return (
     <Router>
@@ -91,7 +93,7 @@ export default function App() {
         <Routes>
           <Route path='/sobre' element={<About />} />
           <Route path='/contrato' element={<Contrato />} />
-          <Route path='/perfil' element={<About />} />
+          <Route path='/perfil' element={<Perfil />} />
           <Route path='/meus-animais' element={<MeusAnimais />} />
           <Route path='/doar' element={<About />} />
           <Route path='/adotar' element={<About />} />

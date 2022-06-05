@@ -1,0 +1,8 @@
+.salvar:hover {
+    background-color: #156f85;
+}
+
+.notification {
+    z-index: 100;
+    background-color: red;
+}

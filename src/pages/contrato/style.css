@@ -1,0 +1,59 @@
+.form {
+    background-color: #EDE6E6;
+    width: 100%;
+    height: 100%;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+    font-size: 15px;
+}
+
+form {
+    background-color: white;
+    width: 80%;
+    height: 70%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.form-questoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+
+.form-adotante {
+    width: 45%;
+}
+
+.form-animal {
+    width: 45%;
+}
+
+input {
+    background-color: azure;
+    border-radius: 5px;
+}
+
+span {
+    padding: 5px 30px;
+    text-align: justify;
+}
+
+button {
+    background-color: #219EBC;
+    margin: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+}

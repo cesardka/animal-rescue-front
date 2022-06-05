@@ -68,3 +68,32 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+nav {
+  background-color: #fb5607;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  height: 40px;
+  padding-top: 10px;
+  color: #ede6e6;
+}
+
+a:link { text-decoration: none; color: #ffffff; padding-right: 10px; }
+
+a {
+  color: #ffffff;
+  transition: font-weight .2s;
+}
+
+a:hover {
+  font-weight: 800;
+}
+
+.active-style {
+  font-weight: 700;
+  color: #ffbe0b;
+}

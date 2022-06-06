@@ -1,0 +1,50 @@
+.checkbox {
+    display: flex;
+}
+
+.checkbox-label {
+    color: #FFBE0B;
+    font-weight: 400;
+}
+
+.checkbox-input {
+    border-color: #FFBE0B;
+    margin-top: 9px;
+}
+
+.descricao {
+    height: 100px;
+    margin-right: 20px;
+    background-color: #f7fcfc;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-top: 5px;
+    padding: 4px;
+    color: #FFBE0B;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 4px solid #219EBC;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.custom-file-upload:hover {
+    background-color: #219EBC;
+    color: white;
+}
+
+.material-icons {
+    padding-left: 15px;
+}
+
+.input-file {
+    display: flex;
+    padding-top: 5px;
+}

@@ -9,6 +9,7 @@ import { Login } from "./pages/login";
 import { Contrato } from "./pages/contrato";
 import { MeusAnimais } from "./pages/meus-animais";
 import { Perfil } from "./pages/perfil";
+import { Doar } from "./pages/doar";
 
 export default function App() {
   return (
@@ -95,7 +96,7 @@ export default function App() {
           <Route path='/contrato' element={<Contrato />} />
           <Route path='/perfil' element={<Perfil />} />
           <Route path='/meus-animais' element={<MeusAnimais />} />
-          <Route path='/doar' element={<About />} />
+          <Route path='/doar' element={<Doar />} />
           <Route path='/adotar' element={<About />} />
           <Route path='/login' element={<Login />} />
           <Route path='/' element={<About />} />

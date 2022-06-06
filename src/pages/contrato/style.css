@@ -76,3 +76,14 @@ select {
     padding: 4px;
     color: #FFBE0B;
 }
+
+.contrato-termo {
+    padding: 30px;
+}
+
+.title-aviso {
+    color: #FFBE0B;
+    padding: 20px;
+    font-weight: 900;
+    background-color: crimson;
+}

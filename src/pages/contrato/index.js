@@ -28,6 +28,7 @@ export function Contrato() {
   const [isVaccinated, setIsVaccinated] = useState("");
   const [size, setSize] = useState("");
   const [chip, setChip] = useState("");
+  const [agree, setAgree] = useState(false);
 
   const navigate = useNavigate();
 
@@ -265,27 +266,47 @@ export function Contrato() {
           animais. Declaro-me assim, ciente das normas acima, as quais aceito,
           assinando o presente Termo de Responsabilidade, assumindo plenamente
           os deveres que dele constam, bem como outros relacionados à posse
-          responsável e que não estejam incluídos neste Termo. Abandonar ou
-          maltratar animais é crime. Pena: 3 meses a 1 ano de detenção e multa
-          (Lei Federal 9605/98)
+          responsável e que não estejam incluídos neste Termo.
+          <strong>
+            <br></br>
+            Abandonar ou maltratar animais é crime.
+            <br></br>
+            Pena: 3 meses a 1 ano de detenção e multa (Lei Federal 9605/98)
+          </strong>
         </span>
+        <div className='contrato-termo'>
+          <div className='checkbox'>
+            <input
+              type='checkbox'
+              value={agree}
+              onClick={() => setAgree(!agree)}
+            />
+            <label htmlFor={agree ? true : false}>
+              Declaro que li e concordo com o termo.
+            </label>
+          </div>
+        </div>
         <div>
-          <ReactToPdf
-            targetRef={ref}
-            filename='contrato.pdf'
-            x={0.5}
-            y={0.5}
-            scale={0.8}>
-            {({ toPdf }) => (
-              <button
-                type='submit'
-                name='form-botao'
-                value='foo'
-                onClick={toPdf}>
-                Baixar contrato
-              </button>
-            )}
-          </ReactToPdf>
+          {agree ? (
+            <ReactToPdf
+              targetRef={ref}
+              filename='contrato.pdf'
+              x={0.5}
+              y={0.5}
+              scale={0.8}>
+              {({ toPdf }) => (
+                <button
+                  type='submit'
+                  name='form-botao'
+                  value='foo'
+                  onClick={toPdf}>
+                  Baixar contrato
+                </button>
+              )}
+            </ReactToPdf>
+          ) : (
+            <div className='title-aviso'>Concorde para gerar o contrato</div>
+          )}
         </div>
       </form>
     </div>

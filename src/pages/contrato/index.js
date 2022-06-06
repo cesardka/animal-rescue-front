@@ -62,14 +62,14 @@ export function Contrato() {
   };
 
   return (
-    <div className='form'>
+    <div className="form">
       <form onSubmit={handleSubmit} ref={ref}>
-        <div className='form-questoes'>
-          <div className='form-adotante'>
+        <div className="form-questoes">
+          <div className="form-adotante">
             <label>
               Nome do adotante
               <input
-                type='text'
+                type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -77,7 +77,7 @@ export function Contrato() {
             <label>
               Endereço residencial
               <input
-                type='text'
+                type="text"
                 value={streetName}
                 onChange={(e) => setStreetName(e.target.value)}
               />
@@ -86,7 +86,7 @@ export function Contrato() {
             <label>
               Bairro
               <input
-                type='text'
+                type="text"
                 value={district}
                 onChange={(e) => setDistrict(e.target.value)}
               />
@@ -94,7 +94,7 @@ export function Contrato() {
             <label>
               Cidade
               <input
-                type='text'
+                type="text"
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
               />
@@ -102,7 +102,7 @@ export function Contrato() {
             <label>
               Estado
               <input
-                type='text'
+                type="text"
                 value={state}
                 onChange={(e) => setState(e.target.value)}
               />
@@ -110,7 +110,7 @@ export function Contrato() {
             <label>
               CEP
               <input
-                type='text'
+                type="text"
                 value={cep}
                 onChange={(e) => setCep(e.target.value)}
               />
@@ -118,7 +118,7 @@ export function Contrato() {
             <label>
               RG
               <input
-                type='text'
+                type="text"
                 value={rg}
                 onChange={(e) => setRg(e.target.value)}
               />
@@ -126,7 +126,7 @@ export function Contrato() {
             <label>
               CPF
               <input
-                type='text'
+                type="text"
                 value={cpf}
                 onChange={(e) => setCpf(e.target.value)}
               />
@@ -134,7 +134,7 @@ export function Contrato() {
             <label>
               Profissão
               <input
-                type='text'
+                type="text"
                 value={profession}
                 onChange={(e) => setProfession(e.target.value)}
               />
@@ -142,7 +142,7 @@ export function Contrato() {
             <label>
               Estado civil
               <input
-                type='text'
+                type="text"
                 value={matrimonialState}
                 onChange={(e) => setMatrimonialState(e.target.value)}
               />
@@ -150,7 +150,7 @@ export function Contrato() {
             <label>
               Telefone
               <input
-                type='text'
+                type="text"
                 value={telephone}
                 onChange={(e) => setTelephone(e.target.value)}
               />
@@ -158,18 +158,18 @@ export function Contrato() {
             <label>
               E-mail
               <input
-                type='text'
+                type="text"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </label>
           </div>
 
-          <div className='form-animal'>
+          <div className="form-animal">
             <label>
               Nome do animal
               <input
-                type='text'
+                type="text"
                 value={nameAnimal}
                 onChange={(e) => setNameAnimal(e.target.value)}
               />
@@ -177,7 +177,7 @@ export function Contrato() {
             <label>
               Raça
               <input
-                type='text'
+                type="text"
                 value={race}
                 onChange={(e) => setRace(e.target.value)}
               />
@@ -185,7 +185,7 @@ export function Contrato() {
             <label>
               Idade
               <input
-                type='text'
+                type="text"
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
               />
@@ -194,10 +194,11 @@ export function Contrato() {
               Especie
               <select
                 value={specie}
-                onChange={(e) => setSpecie(e.target.value)}>
-                <option value='cachorro'>Cachorro</option>
-                <option value='gato'>Gato</option>
-                <option defaultValue value='outro'>
+                onChange={(e) => setSpecie(e.target.value)}
+              >
+                <option value="cachorro">Cachorro</option>
+                <option value="gato">Gato</option>
+                <option defaultValue value="outro">
                   Outro
                 </option>
               </select>
@@ -206,19 +207,20 @@ export function Contrato() {
               Sexo
               <select
                 value={gender}
-                onChange={(e) => setGender(e.target.value)}>
-                <option value='femino'>Femino</option>
-                <option value='masculino'>Masculino</option>
-                <option defaultValue value='nao-binario'>
+                onChange={(e) => setGender(e.target.value)}
+              >
+                <option value="femino">Femino</option>
+                <option value="masculino">Masculino</option>
+                <option defaultValue value="nao-binario">
                   Não-binário
                 </option>
-                <option value='outro'>Outro</option>
+                <option value="outro">Outro</option>
               </select>
             </label>
             <label>
               Vacinado
               <input
-                type='text'
+                type="text"
                 value={isVaccinated}
                 onChange={(e) => setIsVaccinated(e.target.value)}
               />
@@ -226,7 +228,7 @@ export function Contrato() {
             <label>
               Porte
               <input
-                type='text'
+                type="text"
                 value={size}
                 onChange={(e) => setSize(e.target.value)}
               />
@@ -234,7 +236,7 @@ export function Contrato() {
             <label>
               Chip
               <input
-                type='text'
+                type="text"
                 value={chip}
                 onChange={(e) => setChip(e.target.value)}
               />
@@ -274,10 +276,10 @@ export function Contrato() {
             Pena: 3 meses a 1 ano de detenção e multa (Lei Federal 9605/98)
           </strong>
         </span>
-        <div className='contrato-termo'>
-          <div className='checkbox'>
+        <div className="contrato-termo">
+          <div className="checkbox">
             <input
-              type='checkbox'
+              type="checkbox"
               value={agree}
               onClick={() => setAgree(!agree)}
             />
@@ -286,28 +288,32 @@ export function Contrato() {
             </label>
           </div>
         </div>
-        <div>
+        <>
           {agree ? (
             <ReactToPdf
               targetRef={ref}
-              filename='contrato.pdf'
+              filename="contrato.pdf"
               x={0.5}
               y={0.5}
-              scale={0.8}>
+              scale={0.8}
+            >
               {({ toPdf }) => (
-                <button
-                  type='submit'
-                  name='form-botao'
-                  value='foo'
-                  onClick={toPdf}>
-                  Baixar contrato
-                </button>
+                <div className="baixar-contrato">
+                  <button
+                    type="submit"
+                    name="form-botao"
+                    value="foo"
+                    onClick={toPdf}
+                  >
+                    Baixar contrato
+                  </button>
+                </div>
               )}
             </ReactToPdf>
           ) : (
-            <div className='title-aviso'>Concorde para gerar o contrato</div>
+            <div className="title-aviso">Concorde para gerar o contrato</div>
           )}
-        </div>
+        </>
       </form>
     </div>
   );

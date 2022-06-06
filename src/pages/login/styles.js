@@ -50,3 +50,15 @@ export const LoginWrapper = styled.div`
   padding: 3rem 5rem;
   margin-bottom: auto;
 `;
+
+export const FormWrapper = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 2rem 5rem;
+
+  button:first-of-type {
+    margin: 10px;
+  }
+`;

@@ -1,17 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,100&family=Open+Sans:wght@300;500;600;800&display=swap");
 
 :root {
-  --defaultBackgroundColor: #ffffff;
-  --primaryBackgroundColor: #ffbe0b;
-  --secondaryBackgroundColor: #ede6e6;
-
-  --primaryFontColor: #ffffff;
-  --secondaryFontColor: #ffbe0b;
-  --tertiaryFontColor: #fb5607;
-  --labelColor: #219ebc;
+  --blue: #219ebc;
   --black: #000000;
-  --lightGray: #bfbfbf;
+  --white: #ffffff;
   --gray: #c4c4c4;
+  --lightGray: #bfbfbf;
+  --lighterGray: #ede6e6;
+  --orange: #fb5607;
+  --yellow: #ffbe0b;
+
+  --defaultBackgroundColor: var(--white);
+  --primaryBackgroundColor: var(--yellow);
+  --secondaryBackgroundColor: var(--lighterGray);
+
+  --primaryFontColor: var(--white);
+  --secondaryFontColor: var(--yellow);
+  --tertiaryFontColor: var(--orange);
+  --labelColor: var(--blue);
 }
 
 *,
@@ -86,7 +92,7 @@ nav {
   font-family: "Inter", sans-serif;
   font-weight: 600;
   padding: 0.5rem 0;
-  color: #ede6e6;
+  color: var(--lighterGray);
 }
 
 a:link {

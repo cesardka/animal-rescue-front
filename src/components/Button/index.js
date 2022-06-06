@@ -29,3 +29,7 @@ export const TertiaryButton = styled(BaseButton)(({ props }) => {
       background-color: var(--labelColor);
     `;
 });
+
+export const Button = ({ children }) => (
+  <PrimaryButton>{children}</PrimaryButton>
+);

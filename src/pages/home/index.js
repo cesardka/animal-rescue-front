@@ -12,7 +12,7 @@ const FichaAnimal = (props) => {
   const { nome, descricao, publicadoEm, imgUrl } = props;
   return (
     <FichaAnimalItem>
-      <FichaAnimalFoto src={imgUrl} />
+      <FichaAnimalFoto images={imgUrl} descricao={descricao} />
       <FichaAnimalNome>{nome}</FichaAnimalNome>
       <FichaAnimalDescricao>{descricao}</FichaAnimalDescricao>
       <FichaAnimalPublicadoEm>

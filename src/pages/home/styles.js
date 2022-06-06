@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PaginationSlider } from "../../components/Slider";
 
 const FichaAnimalWrapper = styled.div`
   padding: 20px;
@@ -13,16 +14,17 @@ const FichaAnimalWrapper = styled.div`
 const FichaAnimalItem = styled.div`
   width: 100%;
   &:not(:last-of-type) {
+    border-bottom: 2px dotted var(--lighterGray);
+    padding-bottom: 20px;
     margin-bottom: 20px;
   }
 `;
 
-const FichaAnimalFoto = styled.img`
+const FichaAnimalFoto = styled(PaginationSlider)`
   border: 5px;
   width: 100%;
   height: 300px;
   margin-bottom: 15px;
-  object-fit: scale;
 `;
 
 const FichaAnimalNome = styled.h3`

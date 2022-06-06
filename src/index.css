@@ -2,11 +2,13 @@
 
 :root {
   --blue: #219ebc;
+  --darkBlue: #156f85;
   --black: #000000;
   --white: #ffffff;
   --gray: #c4c4c4;
   --lightGray: #bfbfbf;
   --lighterGray: #ede6e6;
+  --lightestGray: #f7fcfc;
   --orange: #fb5607;
   --yellow: #ffbe0b;
 

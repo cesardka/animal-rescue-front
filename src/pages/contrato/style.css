@@ -1,89 +1,96 @@
 .form {
-    background-color: #EDE6E6;
-    min-width: 100vw;
-    min-height: 100vh;
-    color: black;
-    display: flex;
-    justify-content: space-around;
-    padding-top: 30px;
-    font-size: 15px;
+  background-color: #ede6e6;
+  margin: 0 auto;
+  min-height: 100vh;
+  color: black;
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 0;
+  font-size: 15px;
 }
 
-form {
-    background-color: white;
-    width: 80%;
-    height: 70%;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
+.form form {
+  background-color: white;
+  width: 80%;
+  height: 70%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
 }
 
-label {
-    margin-left: 10px;
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    color: #219EBC;
-    font-weight: 600;
+.form label {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  color: #219ebc;
+  font-weight: 600;
 }
 
-.form-questoes {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-bottom: 30px;
+.form .form-questoes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 30px;
 }
 
 .form-adotante {
-    width: 45%;
+  width: 45%;
 }
 
 .form-animal {
-    width: 45%;
+  width: 45%;
 }
 
-input {
-    background-color: #f7fcfc;
-    border-radius: 5px;
-    padding: 4px;
-    font-weight: 500;
-    margin-top: 5px;
-    color: #FFBE0B;
+.form input {
+  background-color: #f7fcfc;
+  border-radius: 5px;
+  padding: 4px;
+  font-weight: 500;
+  margin-top: 5px;
+  color: #ffbe0b;
 }
 
-span {
-    padding: 5px 30px;
-    text-align: justify;
+.form span {
+  padding: 5px 30px;
+  text-align: justify;
 }
 
-button {
-    background-color: #219EBC;
-    margin: 15px;
-    padding: 5px;
-    border-radius: 10px;
-    color: white;
+.form .baixar-contrato {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-button:hover {
-    background-color: #156f85;
+.form button {
+  background-color: var(--yellow);
+  margin-bottom: 20px;
+  padding: 15px 10px;
+  border-radius: 5px;
+  color: white;
 }
 
-select {
-    background-color: #f7fcfc;
-    border-radius: 5px;
-    font-weight: 500;
-    margin-top: 5px;
-    padding: 4px;
-    color: #FFBE0B;
+.form button:hover {
+  background-color: #156f85;
+}
+
+.form select {
+  background-color: #f7fcfc;
+  border-radius: 5px;
+  font-weight: 500;
+  margin-top: 5px;
+  padding: 4px;
+  color: #ffbe0b;
 }
 
 .contrato-termo {
-    padding: 30px;
+  padding: 15px 30px;
 }
 
 .title-aviso {
-    color: #FFBE0B;
-    padding: 20px;
-    font-weight: 900;
-    background-color: crimson;
+  color: #ffbe0b;
+  padding: 20px;
+  font-weight: 900;
+  background-color: crimson;
 }

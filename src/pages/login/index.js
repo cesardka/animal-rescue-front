@@ -8,6 +8,8 @@ import {
   LoginWrapper,
 } from "./styles";
 
+const handleLoginClik = () => {};
+
 export const Login = () => (
   <AppWrapper>
     <AppHeader>
@@ -15,8 +17,9 @@ export const Login = () => (
       <AppTitle>Animal Rescue</AppTitle>
       <AppSubtitle>Aqui o amor é verdadeiro</AppSubtitle>
     </AppHeader>
+
     <LoginWrapper>
-      <PrimaryButton>Login</PrimaryButton>
+      <PrimaryButton onClick={handleLoginClik}>Login</PrimaryButton>
       <SecondaryButton>Cadastro</SecondaryButton>
     </LoginWrapper>
   </AppWrapper>

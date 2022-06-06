@@ -20,6 +20,7 @@
 * {
   margin: 0;
   padding: 0;
+  transition: all 0.2;
 }
 
 #root,
@@ -75,18 +76,22 @@ nav {
   display: flex;
   justify-content: flex-end;
   padding-right: 10px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   height: 40px;
   padding-top: 10px;
   color: #ede6e6;
 }
 
-a:link { text-decoration: none; color: #ffffff; padding-right: 10px; }
+a:link {
+  text-decoration: none;
+  color: #ffffff;
+  padding-right: 10px;
+}
 
 a {
   color: #ffffff;
-  transition: font-weight .2s;
+  transition: font-weight 0.2s;
 }
 
 a:hover {

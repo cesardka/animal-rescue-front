@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { PrimaryButton, SecondaryButton } from "../../components/Button";
+import { TelaLogin } from "./login";
+import { TelaCadastro } from "./cadastro";
 import {
   AppWrapper,
   AppHeader,
@@ -7,52 +9,23 @@ import {
   AppTitle,
   AppSubtitle,
   LoginWrapper,
-  FormWrapper,
 } from "./styles";
 
 export const Login = () => {
   const [tela, setTela] = useState("");
 
-  const handleClick = (pagina = "") => {
-    console.log({ pagina });
-    setTela(pagina);
-  };
-
-  const handleSubmitLogin = (e) => {
-    e.preventDefault();
-  };
-
-  const handleSubmitCadastro = (e) => {
-    e.preventDefault();
+  const irParaTela = (tela = "") => {
+    console.log({ tela });
+    setTela(tela);
   };
 
   const TelaInicial = (
     <LoginWrapper>
-      <PrimaryButton onClick={(e) => handleClick("login")}>Login</PrimaryButton>
-      <SecondaryButton onClick={(e) => handleClick("cadastro")}>
+      <PrimaryButton onClick={(e) => irParaTela("login")}>Login</PrimaryButton>
+      <SecondaryButton onClick={(e) => irParaTela("cadastro")}>
         Cadastro
       </SecondaryButton>
     </LoginWrapper>
-  );
-
-  /* TODO: adicionar form login */
-  const TelaLogin = (
-    <FormWrapper onSubmit={(e) => handleSubmitLogin(e)}>
-      <PrimaryButton onClick={(e) => handleClick("login")}>Login</PrimaryButton>
-      <SecondaryButton onClick={(e) => handleClick("cadastro")}>
-        Cadastro
-      </SecondaryButton>
-    </FormWrapper>
-  );
-
-  /* TODO: adicionar form cadastro */
-  const TelaCadastro = (
-    <form onSubmit={(e) => handleSubmitCadastro(e)}>
-      <PrimaryButton onClick={(e) => handleClick("login")}>Login</PrimaryButton>
-      <SecondaryButton onClick={(e) => handleClick("cadastro")}>
-        Cadastro
-      </SecondaryButton>
-    </form>
   );
 
   return (
@@ -62,10 +35,9 @@ export const Login = () => {
         <AppTitle>Animal Rescue</AppTitle>
         <AppSubtitle>Aqui o amor é verdadeiro</AppSubtitle>
       </AppHeader>
-
       {tela === "" && TelaInicial}
-      {tela === "login" && TelaLogin}
-      {tela === "cadastro" && TelaCadastro}
+      {tela === "login" && <TelaLogin irParaTela={irParaTela} />}
+      {tela === "cadastro" && <TelaCadastro irParaTela={irParaTela} />}
     </AppWrapper>
   );
 };

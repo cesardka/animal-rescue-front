@@ -53,10 +53,12 @@ export const LoginWrapper = styled.div`
 
 export const FormWrapper = styled.form`
   display: flex;
-  height: 300px;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  padding: 3rem 5rem;
-  margin-bottom: auto;
+  padding: 2rem 5rem;
+
+  button:first-of-type {
+    margin: 10px;
+  }
 `;

@@ -1,11 +1,11 @@
 import React from "react";
+import NavMenu from "./components/NavMenu";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Login } from "./pages/login";
 import { Contrato } from "./pages/contrato";
 import { MeusAnimais } from "./pages/meus-animais";
 import { Perfil } from "./pages/perfil";
 import { Doar } from "./pages/doar";
-import NavMenu from "./components/NavMenu";
 
 const Home = () => {
   return <h2>Home</h2>;

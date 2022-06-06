@@ -2,7 +2,18 @@ import react from "react";
 import "./style.css";
 import { animaisData } from "./animais.mock";
 
+import axios from "axios";
+
+const getAnimals = () => {
+  let animals = axios.get(
+    "http://localhost:8000/pet_adoption/retrieve-all-pets/"
+  );
+
+  console.log(animals);
+};
+
 export function MeusAnimais() {
+  getAnimals();
   return (
     <div className='container'>
       <div className='meus-animais'>

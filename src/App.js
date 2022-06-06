@@ -1,15 +1,19 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  NavLink,
-  Routes,
-} from "react-router-dom";
+import NavMenu from "./components/NavMenu";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Login } from "./pages/login";
 import { Contrato } from "./pages/contrato";
 import { MeusAnimais } from "./pages/meus-animais";
 import { Perfil } from "./pages/perfil";
 import { Doar } from "./pages/doar";
+
+const Home = () => {
+  return <h2>Home</h2>;
+};
+
+const About = () => {
+  return <h2>About</h2>;
+};
 
 export default function App() {
   return (
@@ -17,99 +21,43 @@ export default function App() {
       <div>
         <nav>
           <li>
-            <NavLink
-              className={(navData) =>
-                navData.isActive ? "active-style" : "none"
-              }
-              to='/'>
-              Home
-            </NavLink>
+            <NavMenu to="/">Home</NavMenu>
           </li>
           <li>
-            <NavLink
-              className={(navData) =>
-                navData.isActive ? "active-style" : "none"
-              }
-              to='/sobre'>
-              Sobre
-            </NavLink>
+            <NavMenu to="/sobre">Sobre</NavMenu>
           </li>
           <li>
-            <NavLink
-              className={(navData) =>
-                navData.isActive ? "active-style" : "none"
-              }
-              to='/contrato'>
-              Contrato
-            </NavLink>
+            <NavMenu to="/contrato">Contrato</NavMenu>
           </li>
           <li>
-            <NavLink
-              className={(navData) =>
-                navData.isActive ? "active-style" : "none"
-              }
-              to='/perfil'>
-              Perfil
-            </NavLink>
+            <NavMenu to="/perfil">Perfil</NavMenu>
           </li>
           <li>
-            <NavLink
-              className={(navData) =>
-                navData.isActive ? "active-style" : "none"
-              }
-              to='/meus-animais'>
-              Meus animais
-            </NavLink>
+            <NavMenu to="/meus-animais">Meus animais</NavMenu>
           </li>
           <li>
-            <NavLink
-              className={(navData) =>
-                navData.isActive ? "active-style" : "none"
-              }
-              to='/doar'>
-              Doar
-            </NavLink>
+            <NavMenu to="/doar">Doar</NavMenu>
           </li>
           <li>
-            <NavLink
-              className={(navData) =>
-                navData.isActive ? "active-style" : "none"
-              }
-              to='/adotar'>
-              Adotar
-            </NavLink>
+            <NavMenu to="/adotar">Adotar</NavMenu>
           </li>
           <li>
-            <NavLink
-              className={(navData) =>
-                navData.isActive ? "active-style" : "none"
-              }
-              to='/login'>
-              Login
-            </NavLink>
+            <NavMenu to="/login">Login</NavMenu>
           </li>
         </nav>
 
         {/* 👇️ Wrap your Route components in a Routes component */}
         <Routes>
-          <Route path='/sobre' element={<About />} />
-          <Route path='/contrato' element={<Contrato />} />
-          <Route path='/perfil' element={<Perfil />} />
-          <Route path='/meus-animais' element={<MeusAnimais />} />
-          <Route path='/doar' element={<Doar />} />
-          <Route path='/adotar' element={<About />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/' element={<About />} />
+          <Route path="/sobre" element={<About />} />
+          <Route path="/contrato" element={<Contrato />} />
+          <Route path="/perfil" element={<Perfil />} />
+          <Route path="/meus-animais" element={<MeusAnimais />} />
+          <Route path="/doar" element={<Doar />} />
+          <Route path="/adotar" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Home />} />
         </Routes>
       </div>
     </Router>
   );
-}
-
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
 }

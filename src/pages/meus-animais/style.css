@@ -90,3 +90,39 @@ h3 {
 .icon-bnt:last-child{
   color: red;
 }
+
+.infos-edit {
+  display: flex;
+  flex-direction: column;
+}
+
+.infos-edit input {
+  border: 1px solid var(--primaryBackgroundColor);
+}
+
+.infos-edit textarea {
+  border: 1px solid var(--primaryBackgroundColor);
+}
+
+.infos-edit label{
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.button-salvar {
+  background-color: #26d426;
+  padding: 10px 50px;
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.button-salvar:hover {
+  background-color: #21b721;
+}
+
+.div-salvar {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}

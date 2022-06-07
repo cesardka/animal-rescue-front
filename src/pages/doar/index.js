@@ -37,13 +37,10 @@ export function Doar() {
 
     const user_email = localStorage.getItem("user_email");
 
-    const age_in_years = handleAge(age);
-
     const birthday = new Date(age);
     const age_formated = birthday.toLocaleDateString("pt-BR", {
       timeZone: "UTC",
     });
-    console.log(age_formated);
 
     axios.post(
       "https://animal-rescue-project.herokuapp.com/pet_adoption/register_pet/",
@@ -59,17 +56,6 @@ export function Doar() {
 
     alert("Animal cadastrado!");
     navigate("/home");
-  };
-
-  const handleAge = (age) => {
-    const today = new Date();
-    const birth = new Date(age);
-
-    return Math.floor(
-      Math.ceil(
-        Math.abs(birth.getTime() - today.getTime()) / (1000 * 3600 * 24)
-      ) / 365.25
-    );
   };
 
   return (
@@ -110,6 +96,7 @@ export function Doar() {
               <select
                 value={specie}
                 onChange={(e) => setSpecie(e.target.value)}>
+                <option value='ns'>-----</option>
                 <option value='cachorro'>Cachorro</option>
                 <option value='gato'>Gato</option>
                 <option defaultValue value='outro'>
@@ -122,7 +109,8 @@ export function Doar() {
               <select
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}>
-                <option defaultValue value='femino'>
+                <option value='ns'>-----</option>
+                <option defaultValue value='feminino'>
                   Femino
                 </option>
                 <option value='masculino'>Masculino</option>

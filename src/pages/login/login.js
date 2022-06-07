@@ -4,20 +4,28 @@ import { PasswordInput, TextInput } from "../../components/Input";
 import { FormWrapper } from "./styles";
 
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const TelaLogin = ({ irParaTela = () => {}, ...props }) => {
   const emailLogin = useRef("");
   const passwordLogin = useRef("");
 
+  const navigate = useNavigate();
+
   const handleSubmitLogin = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:8000/login_register/login/", {
-      email: "gkdalcin@gmail.com",
-      password: "sngahdr4g3",
-    });
+    axios.post(
+      "https://animal-rescue-project.herokuapp.com/login_register/login/",
+      {
+        email: emailLogin.current.value,
+        password: passwordLogin.current.value,
+      }
+    );
 
-    //URL: https://animal-rescue-project.herokuapp.com/login_register/login/
+    localStorage.setItem("user_email", emailLogin.current.value);
+
+    navigate("/home");
   };
 
   return (

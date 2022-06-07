@@ -72,3 +72,21 @@ img {
 h3 {
   padding-left: 10px;
 }
+
+
+.icons {
+  width: 10%;
+  height: 5%;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.icon-bnt {
+  color: var(--primaryBackgroundColor);
+  background-color: white;
+}
+
+.icon-bnt:last-child{
+  color: red;
+}

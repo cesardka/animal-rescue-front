@@ -4,6 +4,7 @@ import { PasswordInput, TextInput } from "../../components/Input";
 import { FormWrapper } from "./styles";
 
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const TelaCadastro = ({ irParaTela = () => {}, ...props }) => {
   const emailCadastro = useRef("");
@@ -11,19 +12,24 @@ export const TelaCadastro = ({ irParaTela = () => {}, ...props }) => {
   const senhaCadastro = useRef("");
   const confirmaSenhaCadastro = useRef("");
 
+  const navigate = useNavigate();
+
   const handleSubmitCadastro = (e) => {
     e.preventDefault();
     axios.post(
       "https://animal-rescue-project.herokuapp.com/login_register/create-account/",
       {
-        email: emailCadastro,
-        name: nomeCadastro,
-        password: senhaCadastro,
+        email: emailCadastro.current.value,
+        name: nomeCadastro.current.value,
+        password: senhaCadastro.current.value,
         date: "1996-03-29",
       }
     );
+    window.localStorage.removeItem("user_email");
 
-    localStorage.setItem("user_email", emailCadastro);
+    window.localStorage.setItem("user_email", emailCadastro.current.value);
+
+    navigate("/home");
   };
 
   return (

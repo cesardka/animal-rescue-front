@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 import "./style.css";
 
@@ -34,8 +35,41 @@ export function Doar() {
 
     console.log(data);
 
+    const user_email = localStorage.getItem("user_email");
+
+    const age_in_years = handleAge(age);
+
+    const birthday = new Date(age);
+    const age_formated = birthday.toLocaleDateString("pt-BR", {
+      timeZone: "UTC",
+    });
+    console.log(age_formated);
+
+    axios.post(
+      "https://animal-rescue-project.herokuapp.com/pet_adoption/register_pet/",
+      {
+        user_email: user_email || "gkdalcin@gmail.com",
+        name: name,
+        description: description,
+        birthday: age_formated,
+        especie: specie,
+        sexo: gender,
+      }
+    );
+
     alert("Animal cadastrado!");
     navigate("/home");
+  };
+
+  const handleAge = (age) => {
+    const today = new Date();
+    const birth = new Date(age);
+
+    return Math.floor(
+      Math.ceil(
+        Math.abs(birth.getTime() - today.getTime()) / (1000 * 3600 * 24)
+      ) / 365.25
+    );
   };
 
   return (
@@ -88,11 +122,10 @@ export function Doar() {
               <select
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}>
-                <option value='femino'>Femino</option>
-                <option value='masculino'>Masculino</option>
-                <option defaultValue value='nao-binario'>
-                  Não-binário
+                <option defaultValue value='femino'>
+                  Femino
                 </option>
+                <option value='masculino'>Masculino</option>
                 <option value='outro'>Outro</option>
               </select>
             </label>
@@ -104,7 +137,7 @@ export function Doar() {
                   type='checkbox'
                   value='todas-vacinas'
                 />
-                <label className='checkbox-label' for='vehicle1'>
+                <label className='checkbox-label' htmlFor='todas-vacinas'>
                   Com todas vacinas
                 </label>
               </div>
@@ -114,7 +147,7 @@ export function Doar() {
                   type='checkbox'
                   value='castrado'
                 />
-                <label className='checkbox-label' for='vehicle1'>
+                <label className='checkbox-label' htmlFor='castrado'>
                   Castrado
                 </label>
               </div>
@@ -124,7 +157,7 @@ export function Doar() {
                   type='checkbox'
                   value='desmifurgado'
                 />
-                <label className='checkbox-label' for='vehicle1'>
+                <label className='checkbox-label' htmlFor='vehicle1'>
                   Desmifurgado
                 </label>
               </div>
@@ -134,7 +167,7 @@ export function Doar() {
                   type='checkbox'
                   value='negativo-fiv-felv'
                 />
-                <label className='checkbox-label' for='vehicle1'>
+                <label className='checkbox-label' htmlFor='vehicle1'>
                   Negativo para FIV e FELV
                 </label>
               </div>
@@ -177,7 +210,9 @@ export function Doar() {
                   type='checkbox'
                   value='amigavelComCachorros'
                 />
-                <label className='checkbox-label' for='amigavelComCachorros'>
+                <label
+                  className='checkbox-label'
+                  htmlFor='amigavelComCachorros'>
                   Amigável com cachorros
                 </label>
               </div>
@@ -187,7 +222,7 @@ export function Doar() {
                   type='checkbox'
                   value='amigavelComGatos'
                 />
-                <label className='checkbox-label' for='amigavelComGatos'>
+                <label className='checkbox-label' htmlFor='amigavelComGatos'>
                   Amigável com gatos
                 </label>
               </div>
@@ -197,7 +232,7 @@ export function Doar() {
                   type='checkbox'
                   value='amigavelComCriancas'
                 />
-                <label className='checkbox-label' for='amigavelComCriancas'>
+                <label className='checkbox-label' htmlFor='amigavelComCriancas'>
                   Amigável com crianças
                 </label>
               </div>
@@ -207,7 +242,7 @@ export function Doar() {
                   type='checkbox'
                   value='curioso'
                 />
-                <label className='checkbox-label' for='curioso'>
+                <label className='checkbox-label' htmlFor='curioso'>
                   Curioso
                 </label>
               </div>
@@ -217,7 +252,7 @@ export function Doar() {
                   type='checkbox'
                   value='sociavel'
                 />
-                <label className='checkbox-label' for='sociavel'>
+                <label className='checkbox-label' htmlFor='sociavel'>
                   Sociável
                 </label>
               </div>
@@ -227,7 +262,7 @@ export function Doar() {
                   type='checkbox'
                   value='dominante'
                 />
-                <label className='checkbox-label' for='dominante'>
+                <label className='checkbox-label' htmlFor='dominante'>
                   Dominante
                 </label>
               </div>
@@ -237,7 +272,7 @@ export function Doar() {
                   type='checkbox'
                   value='submisso'
                 />
-                <label className='checkbox-label' for='submisso'>
+                <label className='checkbox-label' htmlFor='submisso'>
                   Submisso
                 </label>
               </div>
@@ -247,7 +282,7 @@ export function Doar() {
                   type='checkbox'
                   value='brincalhao'
                 />
-                <label className='checkbox-label' for='brincalhao'>
+                <label className='checkbox-label' htmlFor='brincalhao'>
                   Brincalhão
                 </label>
               </div>
@@ -257,7 +292,7 @@ export function Doar() {
                   type='checkbox'
                   value='extrovertido'
                 />
-                <label className='checkbox-label' for='extrovertido'>
+                <label className='checkbox-label' htmlFor='extrovertido'>
                   Extrovertido
                 </label>
               </div>
@@ -267,7 +302,7 @@ export function Doar() {
                   type='checkbox'
                   value='calmo'
                 />
-                <label className='checkbox-label' for='calmo'>
+                <label className='checkbox-label' htmlFor='calmo'>
                   Calmo
                 </label>
               </div>
@@ -277,7 +312,7 @@ export function Doar() {
                   type='checkbox'
                   value='introspectivo'
                 />
-                <label className='checkbox-label' for='introspectivo'>
+                <label className='checkbox-label' htmlFor='introspectivo'>
                   Introspectivo{" "}
                 </label>
               </div>
@@ -292,7 +327,7 @@ export function Doar() {
             </label>
             <label>Fotos</label>
 
-            <label class='custom-file-upload'>
+            <label className='custom-file-upload'>
               <input type='file' />
               <div className='input-file'>
                 Carregue as imagens

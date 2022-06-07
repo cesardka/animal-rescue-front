@@ -12,12 +12,15 @@ export const TelaLogin = ({ irParaTela = () => {}, ...props }) => {
   const handleSubmitLogin = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:8000/login_register/login/", {
-      email: "gkdalcin@gmail.com",
-      password: "sngahdr4g3",
-    });
+    axios.post(
+      "https://animal-rescue-project.herokuapp.com/login_register/login/",
+      {
+        email: emailLogin,
+        password: passwordLogin,
+      }
+    );
 
-    //URL: https://animal-rescue-project.herokuapp.com/login_register/login/
+    localStorage.setItem("user_email", emailLogin);
   };
 
   return (

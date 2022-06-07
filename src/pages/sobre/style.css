@@ -1,0 +1,21 @@
+.sobre-pg {
+    display: flex;
+}
+
+.sobre {
+    color: #156f85;
+    padding: 50px;
+}
+
+.cachorro {
+    height: 500px;
+    width: 900px;
+    margin: 50px;
+}
+
+.title-sobre {
+    font-weight: 700;
+    font-size: 48px;
+    padding-bottom: 50px;
+    color: var(--primaryBackgroundColor)
+}

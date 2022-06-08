@@ -24,9 +24,8 @@ export const acessaUsuario = (email, password) => {
       password,
     })
     .then((response) => {
-      console.log({ response });
       return response;
     });
 
-  return res?.code === 200;
+  return res;
 };

@@ -14,6 +14,7 @@ import { Logout } from "./pages/logout";
 
 const App = () => {
   const isLoggedIn = localStorage.getItem("user_email")?.length > 0;
+  const paginaInicial = isLoggedIn ? <Home /> : <Login />;
 
   return (
     <Router>
@@ -40,7 +41,7 @@ const App = () => {
 
         {/* 👇️ Wrap your Route components in a Routes component */}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={paginaInicial} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/contrato" element={<Contrato />} />
           <Route path="/perfil" element={<Perfil />} />

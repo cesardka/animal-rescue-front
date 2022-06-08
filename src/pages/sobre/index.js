@@ -2,9 +2,9 @@ import "./style.css";
 
 export const Sobre = () => {
   return (
-    <div className='sobre-pg'>
-      <div className='sobre'>
-        <div className='title-sobre'>Não compre amor, adote!</div>
+    <div className="sobre-pg">
+      <div className="sobre">
+        <div className="title-sobre">Não compre amor, adote!</div>
         Este projeto visa criar uma ferramenta que possa facilitar a adoção de
         animais!
         <br></br>
@@ -18,8 +18,10 @@ export const Sobre = () => {
         pelo professor Kleinner
       </div>
       <img
-        className='cachorro'
-        src='https://clientelas.com.br/wp-content/uploads/2016/03/6986681-dog-cat-friends-e1559042928853.jpg'></img>
+        className="cachorro"
+        alt="Cachorro e gato brincando, deitados em uma cama"
+        src="https://clientelas.com.br/wp-content/uploads/2016/03/6986681-dog-cat-friends-e1559042928853.jpg"
+      ></img>
     </div>
   );
 };

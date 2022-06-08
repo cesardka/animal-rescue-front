@@ -1,8 +1,19 @@
+.salvar {
+  margin: -10px auto 20px auto;
+  height: 51px;
+  min-width: 209px;
+  width: 327px;
+  left: 29px;
+  top: 571px;
+  border-radius: 100px;
+  padding: 16px, 32px, 16px, 32px;
+}
+
 .salvar:hover {
-    background-color: #156f85;
+  background-color: #156f85;
 }
 
 .notification {
-    z-index: 100;
-    background-color: red;
+  z-index: 100;
+  background-color: red;
 }

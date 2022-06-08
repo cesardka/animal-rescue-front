@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 
 export function Perfil() {
@@ -20,6 +19,7 @@ export function Perfil() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     const data = {
       name,
       streetName,
@@ -42,142 +42,143 @@ export function Perfil() {
     alert("Perfil salvo!");
   };
 
+  useEffect(() => {}, []);
+
   return (
-    <>
-      <div className='form'>
-        <form onSubmit={handleSubmit}>
-          <div className='form-questoes'>
-            <div className='form-adotante'>
-              <label>
-                Nome
-                <input
-                  type='text'
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </label>
-              <label>
-                Endereço residencial
-                <input
-                  type='text'
-                  value={streetName}
-                  onChange={(e) => setStreetName(e.target.value)}
-                />
-              </label>
+    <div className="form container">
+      <form onSubmit={handleSubmit}>
+        <div className="form-questoes">
+          <div className="form-adotante">
+            <label>
+              Nome
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </label>
+            <label>
+              Endereço residencial
+              <input
+                type="text"
+                value={streetName}
+                onChange={(e) => setStreetName(e.target.value)}
+              />
+            </label>
 
-              <label>
-                Bairro
-                <input
-                  type='text'
-                  value={district}
-                  onChange={(e) => setDistrict(e.target.value)}
-                />
-              </label>
-              <label>
-                Cidade
-                <input
-                  type='text'
-                  value={city}
-                  onChange={(e) => setCity(e.target.value)}
-                />
-              </label>
-              <label>
-                Estado
-                <input
-                  type='text'
-                  value={state}
-                  onChange={(e) => setState(e.target.value)}
-                />
-              </label>
-              <label>
-                CEP
-                <input
-                  type='text'
-                  value={cep}
-                  onChange={(e) => setCep(e.target.value)}
-                />
-              </label>
-              <label>
-                RG
-                <input
-                  type='text'
-                  value={rg}
-                  onChange={(e) => setRg(e.target.value)}
-                />
-              </label>
-            </div>
-
-            <div className='form-animal'>
-              <label>
-                CPF
-                <input
-                  type='text'
-                  value={cpf}
-                  onChange={(e) => setCpf(e.target.value)}
-                />
-              </label>
-              <label>
-                Profissão
-                <input
-                  type='text'
-                  value={profession}
-                  onChange={(e) => setProfession(e.target.value)}
-                />
-              </label>
-              <label>
-                Estado civil
-                <input
-                  type='text'
-                  value={matrimonialState}
-                  onChange={(e) => setMatrimonialState(e.target.value)}
-                />
-              </label>
-              <label>
-                Telefone
-                <input
-                  type='text'
-                  value={telephone}
-                  onChange={(e) => setTelephone(e.target.value)}
-                />
-              </label>
-              <label>
-                E-mail
-                <input
-                  type='text'
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </label>
-
-              <label>
-                Idade
-                <input
-                  type='text'
-                  value={age}
-                  onChange={(e) => setAge(e.target.value)}
-                />
-              </label>
-              <label>
-                Sexo
-                <select
-                  value={gender}
-                  onChange={(e) => setGender(e.target.value)}>
-                  <option value='femino'>Femino</option>
-                  <option value='masculino'>Masculino</option>
-                  <option defaultValue value='nao-binario'>
-                    Não-binário
-                  </option>
-                  <option value='outro'>Outro</option>
-                </select>
-              </label>
-            </div>
+            <label>
+              Bairro
+              <input
+                type="text"
+                value={district}
+                onChange={(e) => setDistrict(e.target.value)}
+              />
+            </label>
+            <label>
+              Cidade
+              <input
+                type="text"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+              />
+            </label>
+            <label>
+              Estado
+              <input
+                type="text"
+                value={state}
+                onChange={(e) => setState(e.target.value)}
+              />
+            </label>
+            <label>
+              CEP
+              <input
+                type="text"
+                value={cep}
+                onChange={(e) => setCep(e.target.value)}
+              />
+            </label>
+            <label>
+              RG
+              <input
+                type="text"
+                value={rg}
+                onChange={(e) => setRg(e.target.value)}
+              />
+            </label>
           </div>
 
-          <button className='salvar' onClick={handleSubmit}>
-            Salvar
-          </button>
-        </form>
-      </div>
-    </>
+          <div className="form-animal">
+            <label>
+              CPF
+              <input
+                type="text"
+                value={cpf}
+                onChange={(e) => setCpf(e.target.value)}
+              />
+            </label>
+            <label>
+              Profissão
+              <input
+                type="text"
+                value={profession}
+                onChange={(e) => setProfession(e.target.value)}
+              />
+            </label>
+            <label>
+              Estado civil
+              <input
+                type="text"
+                value={matrimonialState}
+                onChange={(e) => setMatrimonialState(e.target.value)}
+              />
+            </label>
+            <label>
+              Telefone
+              <input
+                type="text"
+                value={telephone}
+                onChange={(e) => setTelephone(e.target.value)}
+              />
+            </label>
+            <label>
+              E-mail
+              <input
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </label>
+
+            <label>
+              Idade
+              <input
+                type="text"
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+              />
+            </label>
+            <label>
+              Sexo
+              <select
+                value={gender}
+                onChange={(e) => setGender(e.target.value)}
+              >
+                <option value="femino">Femino</option>
+                <option value="masculino">Masculino</option>
+                <option defaultValue value="nao-binario">
+                  Não-binário
+                </option>
+                <option value="outro">Outro</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <button className="salvar" onClick={handleSubmit}>
+          Salvar
+        </button>
+      </form>
+    </div>
   );
 }

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const BaseButton = styled.button`
   height: 51px;
+  min-width: 209px;
   width: 327px;
   left: 29px;
   top: 571px;
@@ -33,3 +34,10 @@ export const TertiaryButton = styled(BaseButton)(({ props }) => {
 export const Button = ({ children }) => (
   <PrimaryButton>{children}</PrimaryButton>
 );
+
+export const BlueButton = styled(BaseButton)(({ props }) => {
+  return `
+    color: var(--white);
+    background-color: var(--blue);
+  `;
+});

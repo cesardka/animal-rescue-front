@@ -46,7 +46,7 @@
 .form input {
   background-color: #f7fcfc;
   border-radius: 5px;
-  padding: 4px;
+  padding: 4px 8px;
   font-weight: 500;
   margin-top: 5px;
   color: #ffbe0b;

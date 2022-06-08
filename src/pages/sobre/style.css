@@ -1,21 +1,41 @@
 .sobre-pg {
-    display: flex;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  flex-direction: row;
 }
 
 .sobre {
-    color: #156f85;
-    padding: 50px;
+  color: #156f85;
+  padding: 50px;
 }
 
 .cachorro {
-    height: 500px;
-    width: 900px;
-    margin: 50px;
+  height: 700px;
+  width: auto;
+  max-width: 550px;
+  margin: 50px;
+  object-fit: cover;
 }
 
 .title-sobre {
-    font-weight: 700;
-    font-size: 48px;
-    padding-bottom: 50px;
-    color: var(--primaryBackgroundColor)
+  font-weight: 700;
+  font-size: 48px;
+  padding-bottom: 50px;
+  color: var(--primaryBackgroundColor);
+}
+
+@media screen and (max-width: 700px) {
+  .sobre-pg {
+    flex-direction: column;
+  }
+
+  .cachorro {
+    margin: 0;
+    height: 300px;
+    width: auto;
+    border-radius: 0;
+  }
 }

@@ -21,8 +21,10 @@ export const AppHeader = styled.header`
 `;
 
 export const AppLogo = styled.img`
-  max-height: 20rem;
+  height: 20rem;
+  width: auto;
   pointer-events: none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 12px 5px;
 `;
 
 export const AppTitle = styled.p`
@@ -43,7 +45,7 @@ export const AppSubtitle = styled.span`
 
 export const LoginWrapper = styled.div`
   display: flex;
-  height: 300px;
+  min-height: 300px;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
@@ -52,11 +54,12 @@ export const LoginWrapper = styled.div`
 `;
 
 export const FormWrapper = styled.form`
+  width: 100%;
+  padding: 1rem 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  padding: 2rem 5rem;
 
   button:first-of-type {
     margin: 10px;

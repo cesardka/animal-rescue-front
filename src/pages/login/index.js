@@ -15,7 +15,6 @@ export const Login = () => {
   const [tela, setTela] = useState("");
 
   const irParaTela = (tela = "") => {
-    console.log({ tela });
     setTela(tela);
   };
 

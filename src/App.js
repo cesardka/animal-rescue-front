@@ -10,28 +10,33 @@ import { Doar } from "./pages/doar";
 import { Adotar } from "./pages/adotar";
 import { Login } from "./pages/login";
 import { LogoOutline } from "./styles";
+import { Logout } from "./pages/logout";
 
 const App = () => {
+  const isLoggedIn = localStorage.getItem("user_email")?.length > 0;
+
   return (
     <Router>
       <>
-        <nav>
-          <NavMenu to="/">Home</NavMenu>
-          <NavMenu to="/sobre">Sobre</NavMenu>
-          <NavMenu to="/contrato">Contrato</NavMenu>
-          <NavMenu to="/perfil">Perfil</NavMenu>
-          <NavMenu to="/meus-animais">Meus animais</NavMenu>
-          <NavMenu to="/doar">Doar</NavMenu>
-          <NavMenu to="/adotar">Adotar</NavMenu>
-          <NavMenu to="/login">Login</NavMenu>
-          <NavMenu to="/">
-            <LogoOutline
-              className="logo"
-              src="/images/logo-outline.svg"
-              alt="logo"
-            />
-          </NavMenu>
-        </nav>
+        {isLoggedIn && (
+          <nav>
+            <NavMenu to="/">Home</NavMenu>
+            <NavMenu to="/sobre">Sobre</NavMenu>
+            <NavMenu to="/contrato">Contrato</NavMenu>
+            <NavMenu to="/perfil">Perfil</NavMenu>
+            <NavMenu to="/meus-animais">Meus animais</NavMenu>
+            <NavMenu to="/doar">Doar</NavMenu>
+            <NavMenu to="/adotar">Adotar</NavMenu>
+            <NavMenu to="/logout">Logout</NavMenu>
+            <NavMenu to="/login">
+              <LogoOutline
+                className="logo"
+                src="/images/logo-outline.svg"
+                alt="logo"
+              />
+            </NavMenu>
+          </nav>
+        )}
 
         {/* 👇️ Wrap your Route components in a Routes component */}
         <Routes>
@@ -43,6 +48,7 @@ const App = () => {
           <Route path="/doar" element={<Doar />} />
           <Route path="/adotar" element={<Adotar />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
         </Routes>
       </>
     </Router>

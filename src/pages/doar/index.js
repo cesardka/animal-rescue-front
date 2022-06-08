@@ -37,11 +37,6 @@ export function Doar() {
 
     const user_email = localStorage.getItem("user_email");
 
-    localStorage.setItem(
-      name,
-      "https://www.thesprucepets.com/thmb/k3NXIqobAKvxoQ2ozGcwPxzIkpI=/3300x1856/smart/filters:no_upscale()/most-obedient-dog-breeds-4796922-hero-4440a0ccec0e42c98c5e58821fc9f165.jpg"
-    );
-
     const birthday = new Date(age);
     const age_formated = birthday.toLocaleDateString("pt-BR", {
       timeZone: "UTC",

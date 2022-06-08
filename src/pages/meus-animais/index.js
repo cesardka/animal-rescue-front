@@ -23,15 +23,7 @@ export function MeusAnimais() {
     );
 
     animals.data.forEach((ani) => {
-      let randPic = getRandomPic();
-
-      let h = localStorage.getItem(ani.name);
-      if (h === null) {
-        ani.imgUrl = randPic;
-        localStorage.setItem(ani.name, randPic);
-      } else {
-        ani.imgUrl = h;
-      }
+      ani.imgUrl = getRandomPic();
     });
 
     return animals.data;
@@ -74,9 +66,7 @@ export function MeusAnimais() {
     setNewAge(data.idade);
     setNewDescription(data.description);
     setNewName(data.name);
-
-    const pic = localStorage.getItem(data.name);
-    setOldPic(pic);
+    setOldPic(data.imgUrl);
 
     setIsReadOnly(false);
   };

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import { animaisData } from "./animais.mock";
+
 import axios from "axios";
 
 export function MeusAnimais() {
@@ -23,7 +24,15 @@ export function MeusAnimais() {
     );
 
     animals.data.forEach((ani) => {
-      ani.imgUrl = getRandomPic();
+      let randPic = getRandomPic();
+
+      let h = localStorage.getItem(ani.name);
+      if (h === null) {
+        ani.imgUrl = randPic;
+        localStorage.setItem(ani.name, randPic);
+      } else {
+        ani.imgUrl = h;
+      }
     });
 
     return animals.data;
@@ -61,12 +70,14 @@ export function MeusAnimais() {
     );
   };
 
-  const handleEdit = (data) => {
+  const handleEdit = async (data) => {
     setOldName(data.name);
     setNewAge(data.idade);
     setNewDescription(data.description);
     setNewName(data.name);
-    setOldPic(data.imgUrl);
+
+    const pic = localStorage.getItem(data.name);
+    setOldPic(pic);
 
     setIsReadOnly(false);
   };
@@ -160,7 +171,7 @@ export function MeusAnimais() {
         <div className='animal'>
           <form>
             <div className='infos-edit'>
-              <img src={oldPic} alt='Foto antiga' />
+              <img src={oldPic} />
               <label>Nome do animal</label>
               <input
                 type='text'

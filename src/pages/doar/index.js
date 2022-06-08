@@ -60,7 +60,7 @@ export function Doar() {
     );
 
     alert("Animal cadastrado!");
-    navigate("/home");
+    navigate("/");
   };
 
   return (

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import { animaisData } from "./animais.mock";
-
 import axios from "axios";
 
 export function MeusAnimais() {
@@ -70,7 +69,7 @@ export function MeusAnimais() {
     );
   };
 
-  const handleEdit = async (data) => {
+  const handleEdit = (data) => {
     setOldName(data.name);
     setNewAge(data.idade);
     setNewDescription(data.description);
@@ -128,37 +127,44 @@ export function MeusAnimais() {
   const showInfos = () => {
     return (
       <>
-        <div className='title-pag'>Para adoção</div>
-        {allAnimals.map((data, key) => {
-          return (
-            <div key={key} className='animal'>
-              <img src={data.imgUrl} />
-              <h3 className='title'>{data.name}</h3>
-              <div className='infos'>
-                <div className='info-esquerda'>
-                  <div className='info'>Espécie: {data.especie}</div>
-                  <div className='info'>Descrição: {data.description}</div>
+        <div className="title-pag">Para adoção</div>
+        {allAnimals &&
+          allAnimals.map((data, key) => (
+            <div key={key} className="animal">
+              <img src={data.imgUrl} alt={data.description} />
+              <h3 className="title">{data.name}</h3>
+              <div className="infos">
+                <div className="info-esquerda">
+                  <div className="info">Espécie: {data.especie}</div>
+                  <div className="info">Descrição: {data.description}</div>
                 </div>
-                <div className='info-direita'>
-                  <div className='info'>Sexo: {data.sexo}</div>
-                  <div className='info'>Idade: {data.idade}</div>
+                <div className="info-direita">
+                  <div className="info">Sexo: {data.sexo}</div>
+                  <div className="info">Idade: {data.idade}</div>
                 </div>
-                <div className='icons'>
+                <div className="icons">
                   <button
-                    className='icon-bnt'
-                    onClick={() => handleDelete(data.name)}>
-                    <span className='material-symbols-outlined'>delete</span>
+                    className="icon-bnt"
+                    onClick={() => handleDelete(data.name)}
+                  >
+                    <span className="material-symbols-outlined">delete</span>
                   </button>
-                  <button className='icon-bnt' onClick={() => handleEdit(data)}>
-                    <span className='material-symbols-outlined'>edit_note</span>
+                  <button className="icon-bnt" onClick={() => handleEdit(data)}>
+                    <span className="material-symbols-outlined">edit_note</span>
                   </button>
                 </div>
               </div>
             </div>
-          );
-        })}
-        <div className='title-pag'>Adotados por mim</div>
-        <div className='adotados'>
+          ))(
+            !allAnimals && (
+              <div className="adotados">
+                Você ainda não tem nenhum animal para adoção.
+              </div>
+            )
+          )}
+
+        <div className="title-pag">Adotados por mim</div>
+        <div className="adotados">
           Você ainda não adotou nenhum animal pelo nosso site.
         </div>
       </>
@@ -168,20 +174,20 @@ export function MeusAnimais() {
   const showEdit = () => {
     return (
       <>
-        <div className='animal'>
+        <div className="animal">
           <form>
-            <div className='infos-edit'>
-              <img src={oldPic} />
+            <div className="infos-edit">
+              <img src={oldPic} alt="Foto antiga" />
               <label>Nome do animal</label>
               <input
-                type='text'
+                type="text"
                 value={newName}
                 onChange={(e) => setNewName(e.target.value)}
               />
 
               <label>Descrição</label>
               <textarea
-                type='text'
+                type="text"
                 value={newDescription}
                 onChange={(e) => setNewDescription(e.target.value)}
               />
@@ -190,18 +196,19 @@ export function MeusAnimais() {
               <input
                 value={newAge}
                 onChange={(e) => setNewAge(e.target.value)}
-                type='date'
-                id='start'
-                name='trip-start'
-                min='2018-01-01'
-                max='2022-12-31'
+                type="date"
+                id="start"
+                name="trip-start"
+                min="2018-01-01"
+                max="2022-12-31"
               />
             </div>
-            <div className='div-salvar'>
+            <div className="div-salvar">
               <button
-                type='submit'
-                className='button-salvar'
-                onClick={() => handleSaveEditions()}>
+                type="submit"
+                className="button-salvar"
+                onClick={() => handleSaveEditions()}
+              >
                 Salvar
               </button>
             </div>
@@ -212,8 +219,8 @@ export function MeusAnimais() {
   };
 
   return (
-    <div className='container'>
-      <div className='meus-animais'>
+    <div className="container">
+      <div className="meus-animais">
         {isReadOnly ? showInfos() : showEdit()}
       </div>
     </div>

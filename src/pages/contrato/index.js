@@ -58,7 +58,7 @@ export function Contrato() {
     };
 
     console.log(data);
-    navigate("/home");
+    navigate("/");
   };
 
   return (

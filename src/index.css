@@ -122,3 +122,25 @@ a {
   width: 55px;
   height: 40px;
 }
+
+input.invalid-value {
+  border: solid 2px var(--orange);
+}
+
+.slide-up {
+  position: absolute;
+  animation: slideup 0.3s forwards;
+  transition: all 0.3s ease;
+}
+
+@keyframes slideup {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+
+  100% {
+    top: -100%;
+    opacity: 0;
+  }
+}

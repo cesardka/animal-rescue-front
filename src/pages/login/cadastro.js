@@ -3,8 +3,8 @@ import { PrimaryButton, SecondaryButton } from "../../components/Button";
 import { PasswordInput, TextInput } from "../../components/Input";
 import { FormWrapper } from "./styles";
 
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { cadastrarUsuario } from "../../services/user";
 
 export const TelaCadastro = ({ irParaTela = () => {}, ...props }) => {
   const emailCadastro = useRef("");
@@ -14,53 +14,67 @@ export const TelaCadastro = ({ irParaTela = () => {}, ...props }) => {
 
   const navigate = useNavigate();
 
-  const handleSubmitCadastro = (e) => {
+  const handleSubmitCadastro = async (e) => {
     e.preventDefault();
-    axios.post(
-      "https://animal-rescue-project.herokuapp.com/login_register/create-account/",
-      {
-        email: emailCadastro.current.value,
-        name: nomeCadastro.current.value,
-        password: senhaCadastro.current.value,
-        date: "1996-03-29",
-      }
-    );
-    window.localStorage.removeItem("user_email");
 
+    const campos = document.querySelectorAll("input");
+    let camposInvalidos = 0;
+    campos.forEach((c) => {
+      if (c.value.trim() === "") {
+        c.classList.add("invalid-value");
+        camposInvalidos++;
+      } else {
+        c.classList.remove("invalid-value");
+      }
+    });
+
+    if (camposInvalidos > 0) return;
+
+    const retorno = await cadastrarUsuario({
+      email: emailCadastro.current.value,
+      nome: nomeCadastro.current.value,
+      senha: senhaCadastro.current.value,
+    });
+    console.log(`Retorno cadastroUsuario: ${retorno}`);
+
+    if (retorno.code !== 200) {
+      alert("Não foi possível cadastrar este usuário!");
+      return;
+    }
+
+    window.localStorage.removeItem("user_email");
     window.localStorage.setItem("user_email", emailCadastro.current.value);
 
-    navigate("/home");
+    navigate("/");
   };
 
   return (
     <FormWrapper onSubmit={(e) => handleSubmitCadastro(e)}>
       <TextInput
-        label='E-mail'
-        name='email'
+        label="E-mail"
+        name="email"
         ref={emailCadastro}
         value={emailCadastro.current.value}
       />
       <TextInput
-        label='Nome'
-        name='nome'
+        label="Nome"
+        name="nome"
         ref={nomeCadastro}
         value={nomeCadastro.current.value}
       />
       <PasswordInput
-        label='Senha'
-        name='senha'
+        label="Senha"
+        name="senha"
         ref={senhaCadastro}
         value={senhaCadastro.current.value}
       />
       <PasswordInput
-        label='Confirme a senha'
-        name='confirmaSenha'
+        label="Confirme a senha"
+        name="confirmaSenha"
         ref={confirmaSenhaCadastro}
         value={confirmaSenhaCadastro.current.value}
       />
-      <PrimaryButton onClick={(e) => handleSubmitCadastro()}>
-        Cadastrar
-      </PrimaryButton>
+      <PrimaryButton type="submit">Cadastrar</PrimaryButton>
       <SecondaryButton onClick={(e) => irParaTela("")}>Voltar</SecondaryButton>
     </FormWrapper>
   );
